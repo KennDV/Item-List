@@ -1,0 +1,36 @@
+{% extends 'todo/main.html' %}
+{% load socialaccount %}
+
+{% block content %}
+
+<div class="header-bar">
+    <h1>PROJECT NOTES WEB</h1>
+</div>
+
+<style>
+    .header-bar {
+        text-align: center;
+    }
+</style>
+
+<div class="card-body">
+    <div class="card-body-column">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="button" type="submit" value="Login Now">
+            <small>
+                <a href="{% url 'register' %}" class="button">Register</a>
+            </small>
+        </form>
+    </div>
+    <div class="card-body-column">
+        <a href="{% provider_login_url 'google'%}?next=/" class="google-btn">
+            <img src="https://www.pngplay.com/wp-content/uploads/13/Google-Logo-PNG-HD-Quality.png" alt="Google logo">
+            Login with Google
+        </a>
+       
+    </div>
+</div>
+
+{% endblock content %}

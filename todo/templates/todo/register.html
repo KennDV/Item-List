@@ -1,0 +1,28 @@
+{% extends 'todo/main.html' %}
+{% load socialaccount %}
+{% block content %}
+
+<div class="container2">
+    <div class="header-bar">
+        <h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRegister</h1>
+    </div>
+    <div class="card-body2">
+        <form action="" method="post">
+            {% csrf_token %}
+            <label>{{ form.username.label }}</label>
+            {{ form.username }}
+        
+            <label>{{ form.password1.label }}</label>
+            {{ form.password1 }}
+        
+            <label>{{ form.password2.label }}</label>
+            {{ form.password2 }}
+            <br><br>
+            <input class="button2" type="submit" value="Register">
+            <div class="ubos"
+            <small><p>&nbsp&nbsp&nbsp&nbsp<a href="{% url 'login' %}">Login Now</a></p></small>
+        </div>
+        </form>
+    </div>
+</div> 
+{% endblock content %}

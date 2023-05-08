@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Todo List app with django built by destiny franks a full stack web developer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary Project List</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+            background: #e8e4c9;
+            font-family: 'Nunito', sans-serif;
+            padding-top: 200px;
+            
+    }
+    .container {
+        border-radius: 5px 5px 0 0;
+        max-width: 550px;
+        margin: auto;
+        background-color: #fff;
+        -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.5);
+        height: 400px
+    }
+    .container2 {
+        border-radius: 5px 5px 0 0;
+        max-width: 550px;
+        margin: auto;
+        background-color: #fff;
+        -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 1);
+        height: 500px
+    }
+    .container3 {
+        border-radius: 5px 5px 0 0;
+        max-width: 570px;
+        margin: auto;
+        background-color: #fff;
+        -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 2);
+        height: 610px
+    }
+    .header-bar {
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        background: #4caf50;
+        
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Raleway', sans-serif;
+    }
+    .task-items-wrapper {
+        display: row;
+        align-items: column;
+        justify-content: space-between;
+        background-color: #fff;
+        border-top: 1px solid #dfe4ea;
+        overflow: hidden;
+        height: 275px;
+    }
+    .task-create{
+        padding: 30px;
+    }
+    .task-title {
+        display: flex;
+        padding: 20px;
+    }
+
+    .task-title a {
+        text-decoration: none;
+        color: #4b5156;
+        margin-left: 10px;
+    }
+
+    .task-complete-icon {
+        height: 20px;
+        width: 20px;
+        background-color: #4caf50;
+        border-radius: 50%;
+    }
+
+    .task-incomplete-icon {
+        height: 20px;
+        width: 20px;
+        background-color: #ccc;
+        border-radius: 50%;
+    }
+
+    .delete-link {
+        text-decoration: none;
+        font-weight: 900;
+        color: #4caf50;
+        font-size: 22px;
+        line-height: 0;
+        padding: 20px 20px;
+    }
+    .header-bar a {
+        color: #fff;
+        text-decoration: none;
+    }
+    #search-add-wrapper {
+        display: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    input[type=text],
+    input[type=password],
+    textarea {
+        border: 1px solid #757575;
+        border-radius: 5px;
+        padding: 10px;
+        width: 50%;
+    }
+
+    label {
+        padding-top: 10px !important;
+        display: block;
+    }
+
+    ::placeholder {
+        font-weight: 300;
+        opacity: 0.5;
+        }
+    
+        .button {
+            border: 1px solid #757575;
+            background-color: #4caf50;
+            color: #FFF;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            animation-duration: 0.5s;
+            animation-name: bounce;
+            animation-iteration-count: 1;
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.1);
+            margin-left: 30px;
+        }
+        .button2 {
+            border: 1px solid #757575;
+            background-color: #4caf50;
+            color: #FFF;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            animation-duration: 0.5s;
+            animation-name: bounce;
+            animation-iteration-count: 1;
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.1);
+            margin-left: 60px;
+        }
+        #add-link {
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 42px;
+            text-shadow: 1px 1px #81413b;
+        }
+        .card-body {
+            display: flex;
+            padding: 0px;
+            margin-left: 50px
+            
+            
+        }
+    
+        .card-body-column {
+            width: 50%;
+        }
+        .card-body2 {
+            align-items:center;
+            display: center;
+            height: 500%;
+            margin-left:170px;
+            
+        }
+    
+        .card-body2-column {
+            width: 50%;
+            
+        }
+    
+        .google-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4caf50;
+            color: #FFF;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            animation-duration: 0.5s;
+            animation-name: bounce;
+            animation-iteration-count: 1;
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.1);
+            margin-top: 90px;
+            margin-right: 50px;
+            margin-left: 30px;
+    
+        }
+    
+        .google-btn img {
+            height: 24px;
+            margin-right: 10px;
+        }
+        .button:hover {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.google-btn:hover {
+  background-color: #db4437;
+  color: #fff;
+}
+small {
+    margin-top: 20px;
+    margin-left: 7px;
+    display: block;
+}
+
+.ubos{
+    margin-left: 40px;
+}
+    </style>
+    <body>
+        <div class="container">
+            {% block content %}
+    
+    
+        {% endblock content %}
+    </div>
+    <script>
+        // JavaScript for bounce animation
+        const buttons = document.querySelectorAll('.button, .google-btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.style.animationPlayState = 'paused';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.animationPlayState = 'running';
+            });
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'translateY(1px)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+    </body>
+    </html>
